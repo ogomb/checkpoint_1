@@ -6,6 +6,9 @@ public class Member {
     private int age;
     private String address;
 
+    public Member(){
+
+    }
     public Member(String name, int age, String address){
         this.name = name;
         this.age = age;

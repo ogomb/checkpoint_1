@@ -3,6 +3,8 @@ package com.labs.classified.specifications;
 import com.labs.classified.implementation.Member;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.*;
+import static org.junit.Assert.*;
 
 
 public class MemberSpec {
