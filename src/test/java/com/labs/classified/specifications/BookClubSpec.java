@@ -1,16 +1,14 @@
 package com.labs.classified.specifications;
 
-import org.junit.Assert;
+import com.labs.classified.implementation.BookClub;
+import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-
-import java.util.ArrayList;
-import java.util.List;
+import org.junit.rules.ExpectedException;
 
 public class BookClubSpec {
 
-    @Rule
     private BookClub bookClub;
 
     @Before
@@ -19,10 +17,10 @@ public class BookClubSpec {
     }
 
     @Test
-    public whenaddClubMemberThenaddMember(){
+    public void whenAddClubMemberThenAddMember(){
         int initialMembers =bookClub.members.size();
         bookClub.addMember();
-        Assert.assertEquals(bookClub.members.size(), initialMembers+1 );
+        assertEquals(bookClub.members.size(), initialMembers +1 );
 
     }
 
