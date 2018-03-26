@@ -22,3 +22,10 @@ gradle-app.setting
 *.jar
 *.war
 *.ear
+
+out
+.settings
+.classpath
+.project
+src
+bin
