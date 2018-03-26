@@ -1,38 +1,21 @@
 package com.labs.classified.implementation;
 
-public class Member {
+public interface Member {
 
-    private String name;
-    private int age;
-    private String address;
+    public String name = null;
+    public int age = 0;
+    public String address = null;
 
-    public Member(String name, int age, String address){
-        this.name = name;
-        this.age = age;
-        this.address = address;
-    }
 
-    public String getName() {
-        return name;
-    }
+    public String getName();
 
-    public void setName(String name) {
-        this.name = name;
-    }
+    public void setName(String name);
 
-    public int getAge() {
-        return age;
-    }
+    public int getAge();
 
-    public void setAge(int age) {
-        this.age = age;
-    }
+    public void setAge(int age);
 
-    public String getAddress() {
-        return address;
-    }
+    public String getAddress();
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
+    public void setAddress(String address);
 }
