@@ -6,7 +6,6 @@ public interface Member {
     public int age = 0;
     public String address = null;
 
-
     public String getName();
 
     public void setName(String name);
