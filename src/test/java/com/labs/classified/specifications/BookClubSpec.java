@@ -1,5 +1,6 @@
 package com.labs.classified.specifications;
 
+import com.labs.classified.implementation.Book;
 import com.labs.classified.implementation.BookClub;
 import static org.junit.Assert.*;
 import org.junit.Before;
@@ -10,10 +11,14 @@ import org.junit.Test;
 public class BookClubSpec {
 
     private BookClub bookClub;
+    private Book book;
 
     @Before
     public final void before(){
         bookClub = new BookClub();
+        book = new Book("Java Introduction",
+                "Harvey, Paul Deitel",
+                "31414144d");
     }
 
     @Test
@@ -28,6 +33,13 @@ public class BookClubSpec {
         int initialMembers =bookClub.staffMembers.size();
         bookClub.addStaff();
         assertEquals(bookClub.staffMembers.size(), initialMembers +1 );
+    }
+
+    @Test
+    public void whenAddBookThenAddBookToCollection(){
+        int numberOfBooksInCollection = bookClub.bookCollection.size();
+        bookClub.addBookToCollection(book);
+        assertEquals(bookClub.bookCollection.size(), numberOfBooksInCollection +1 );
     }
 
 }
