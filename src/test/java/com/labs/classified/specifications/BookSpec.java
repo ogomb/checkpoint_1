@@ -13,7 +13,7 @@ public class BookSpec {
 
     @Before
     public final void before(){
-        book = new Book();
+        book = new Book(title,author,ISBNNumber);
     }
 
     @Test
