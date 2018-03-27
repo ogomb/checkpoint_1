@@ -30,5 +30,10 @@ public class BookClub {
         bookCollection.add(ISBNumber);
     }
 
-
+    public void borrowBook(Book book){
+        String ISBNumber = book.getISBNNumber();
+        if (bookCollection.size() == 0){
+            throw new RuntimeException("No books currently in store");
+        }
+    }
 }

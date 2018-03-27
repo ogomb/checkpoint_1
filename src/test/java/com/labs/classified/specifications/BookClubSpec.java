@@ -6,12 +6,16 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 
 public class BookClubSpec {
 
     private BookClub bookClub;
     private Book book;
+
+    @Rule
+    public ExpectedException exception = ExpectedException.none();
 
     @Before
     public final void before(){
@@ -39,7 +43,16 @@ public class BookClubSpec {
     public void whenAddBookThenAddBookToCollection(){
         int numberOfBooksInCollection = bookClub.bookCollection.size();
         bookClub.addBookToCollection(book);
-        assertEquals(bookClub.bookCollection.size(), numberOfBooksInCollection +1 );
+        assertEquals(bookClub.bookCollection.size(), numberOfBooksInCollection + 1 );
+    }
+
+    @Test
+    public void whenBookIsBorrowedAndNoBooksInCollectionThrowError(){
+        int numberOfBooksInCollection = bookClub.bookCollection.size();
+        if (numberOfBooksInCollection < 0)
+            exception.expect(RuntimeException.class);
+
+
     }
 
 }
