@@ -1,5 +1,6 @@
 package com.labs.classified.specifications;
 
+import com.labs.classified.implementation.Student;
 import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.*;
@@ -15,6 +16,6 @@ public class StudentSpec {
 
     @Test
     public void whenInstantiatedThenSubjectIntrestIsSet(){
-        assertEquals(student.getSubjectIntrest(), subjectInterest);
+        assertEquals(student.getSubjectInterest(), subjectInterest);
     }
 }

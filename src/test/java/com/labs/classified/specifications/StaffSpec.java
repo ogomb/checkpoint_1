@@ -1,6 +1,8 @@
 package com.labs.classified.specifications;
 
 import static org.junit.Assert.*;
+
+import com.labs.classified.implementation.Staff;
 import org.junit.Before;
 import org.junit.Test;
 
