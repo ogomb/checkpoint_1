@@ -14,7 +14,7 @@ public class StudentSpec {
 
     @Before
     public final void before(){
-        student = new Student();
+        student = new Student(name,address,age,subjectInterest);
     }
 
     @Test

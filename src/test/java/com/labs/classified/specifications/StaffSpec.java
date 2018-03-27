@@ -6,6 +6,8 @@ import com.labs.classified.implementation.Staff;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Date;
+
 public class StaffSpec {
     private Staff staff;
     private final double hoursWorked = 3.5;
@@ -13,20 +15,21 @@ public class StaffSpec {
     private final String name = "Lewis Taylor";
     private final String address = "1344 NY";
     private final int age = 31;
+    private static final double DELTA = 1e-15;
 
     @Before
     public final void before(){
-        staff = new Staff();
+        staff = new Staff(name, address, age, salaryPaid, hoursWorked);
     }
 
     @Test
     public void whenInstantiatedThenSalaryPaidIsSet() {
-        assertEquals(staff.getSalaryPaid(), salaryPaid);
+        assertEquals(staff.getSalaryPaid(), salaryPaid, DELTA);
     }
 
     @Test
     public void whenInstantiatedThenHoursWorkedIsSet(){
-        assertEquals(staff.getHoursWorked(), hoursWorked);
+        assertEquals(staff.getHoursWorked(), hoursWorked, DELTA);
     }
     @Test
     public void whenInstantiatedThenNameIsSet() {
