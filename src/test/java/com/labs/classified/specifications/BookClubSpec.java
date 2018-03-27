@@ -18,9 +18,9 @@ public class BookClubSpec {
 
     @Test
     public void whenAddClubMemberThenAddMember(){
-        int initialMembers =bookClub.members.size();
+        int initialMembers =bookClub.studentMembers.size();
         bookClub.addMember();
-        assertEquals(bookClub.members.size(), initialMembers +1 );
+        assertEquals(bookClub.studentMembers.size(), initialMembers +1 );
 
     }
 

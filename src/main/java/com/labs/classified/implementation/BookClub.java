@@ -1,15 +1,17 @@
 package com.labs.classified.implementation;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BookClub {
-    public List<Member> members =new ArrayList<>();
+    public List<Student> studentMembers =new ArrayList<>();
 
     public void addMember(){
-        Member member = new Student("Lewis Taylor",
+        Student member = new Student("Lewis Taylor",
                 "34311 TX", 32,
                 "Maths");
-        members.add(member);
+        studentMembers.add(member);
+        Collections.sort(studentMembers);
     }
 }
