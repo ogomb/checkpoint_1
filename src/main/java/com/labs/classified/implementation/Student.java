@@ -55,4 +55,8 @@ public class Student implements Member {
     public void setSubjectInterest(String subjectInterest) {
         this.subjectInterest = subjectInterest;
     }
+
+    public Date getDateOfRegistration() {
+        return dateOfRegistration;
+    }
 }

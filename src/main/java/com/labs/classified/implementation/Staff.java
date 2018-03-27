@@ -66,4 +66,8 @@ public class Staff implements Member {
     public void setAddress(String address) {
         this.staffAddress = address;
     }
+
+    public Date getDateOfRegistration() {
+        return dateOfRegistration;
+    }
 }
