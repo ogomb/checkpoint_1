@@ -3,6 +3,9 @@ package com.labs.classified.specifications;
 import com.labs.classified.implementation.Student;
 import org.junit.Before;
 import org.junit.Test;
+
+import java.util.Date;
+
 import static org.junit.Assert.*;
 
 public class StudentSpec {
@@ -35,5 +38,9 @@ public class StudentSpec {
     @Test
     public void whenInstantiatedThenAddressIsSet(){
         assertEquals(student.getAddress(), address);
+    }
+    @Test
+    public void whenInstantiatedThenDateOfRegistrationIsSet() {
+        assertEquals(student.dateOfRegistration, new Date());
     }
 }

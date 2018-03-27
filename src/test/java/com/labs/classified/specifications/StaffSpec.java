@@ -45,4 +45,8 @@ public class StaffSpec {
     public void whenInstantiatedThenAddressIsSet(){
         assertEquals(staff.getAddress(), address);
     }
+    @Test
+    public void whenInstantiatedThenDateOfRegistrationIsSet() {
+        assertEquals(staff.dateOfRegistration, new Date());
+    }
 }

@@ -8,7 +8,7 @@ public class Staff implements Member {
     private String staffName;
     private int staffAge;
     private String staffAddress;
-    private Date dateOfRegistration;
+    public Date dateOfRegistration;
 
     public Staff(String staffName, String staffAddress,
                  int staffAge, double salaryPaid,

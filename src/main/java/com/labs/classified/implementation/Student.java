@@ -7,7 +7,7 @@ public class Student implements Member {
     private int age;
     private String address;
     private String subjectInterest;
-    private Date dateOfRegistration;
+    public Date dateOfRegistration;
 
     public Student(String name, String address,
                    int age, String subjectInterest){
