@@ -17,11 +17,17 @@ public class BookClubSpec {
     }
 
     @Test
-    public void whenAddClubMemberThenAddMember(){
+    public void whenAddClubStudentThenAddMember(){
         int initialMembers =bookClub.studentMembers.size();
-        bookClub.addMember();
+        bookClub.addStudent();
         assertEquals(bookClub.studentMembers.size(), initialMembers +1 );
+    }
 
+    @Test
+    public void whenAddClubStaffThenAddMember(){
+        int initialMembers =bookClub.staffMembers.size();
+        bookClub.addStaff();
+        assertEquals(bookClub.staffMembers.size(), initialMembers +1 );
     }
 
 }
