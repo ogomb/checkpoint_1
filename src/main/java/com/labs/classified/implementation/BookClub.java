@@ -7,7 +7,7 @@ public class BookClub {
     public List<Member> members =new ArrayList<>();
 
     public void addMember(){
-        Member member = new Member();
+        Member member = new Student();
         members.add(member);
     }
 }
