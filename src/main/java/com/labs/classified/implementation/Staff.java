@@ -10,8 +10,15 @@ public class Staff implements Member {
     private String staffAddress;
     private Date dateOfRegistration;
 
-    public Staff(){
+    public Staff(String staffName, String staffAddress,
+                 int staffAge, double salaryPaid,
+                 double hoursWorked) {
         dateOfRegistration = new Date();
+        this.staffAddress = staffAddress;
+        this.staffName =staffName;
+        this.staffAge = staffAge;
+        this.hoursWorked = hoursWorked;
+        this.salaryPaid = salaryPaid;
     }
 
     public double getHoursWorked() {

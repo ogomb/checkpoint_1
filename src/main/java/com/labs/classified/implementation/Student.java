@@ -9,8 +9,13 @@ public class Student implements Member {
     private String subjectInterest;
     private Date dateOfRegistration;
 
-    public Student(){
+    public Student(String name, String address,
+                   int age, String subjectInterest){
         dateOfRegistration = new Date();
+        this.name= name;
+        this.age = age;
+        this.address = address;
+        this.subjectInterest = subjectInterest;
     }
 
     @Override
