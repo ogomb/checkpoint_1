@@ -7,6 +7,7 @@ import java.util.List;
 public class BookClub {
     public List<Student> studentMembers =new ArrayList<>();
     public List<Staff> staffMembers = new ArrayList<>();
+    public List<String> bookCollection = new ArrayList<>();
 
     public void addStudent(){
         Student member = new Student("Lewis Taylor",
@@ -23,4 +24,11 @@ public class BookClub {
         staffMembers.add(member);
         Collections.sort(staffMembers);
     }
+
+    public void addBookToCollection(Book book){
+        String ISBNumber = book.getISBNNumber();
+        bookCollection.add(ISBNumber);
+    }
+
+
 }
