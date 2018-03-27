@@ -1,10 +1,17 @@
 package com.labs.classified.implementation;
 
+import java.util.Date;
+
 public class Student implements Member {
     private String name;
     private int age;
     private String address;
     private String subjectInterest;
+    private Date dateOfRegistration;
+
+    public Student(){
+        dateOfRegistration = new Date();
+    }
 
     @Override
     public String getName() {

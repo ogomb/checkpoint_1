@@ -1,11 +1,18 @@
 package com.labs.classified.implementation;
 
+import java.util.Date;
+
 public class Staff implements Member {
     private double hoursWorked;
     private double salaryPaid;
     private String staffName;
     private int staffAge;
     private String staffAddress;
+    private Date dateOfRegistration;
+
+    public Staff(){
+        dateOfRegistration = new Date();
+    }
 
     public double getHoursWorked() {
         return hoursWorked;
