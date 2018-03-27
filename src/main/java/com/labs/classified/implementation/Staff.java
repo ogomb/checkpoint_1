@@ -1,8 +1,9 @@
 package com.labs.classified.implementation;
 
 import java.util.Date;
+import java.util.Objects;
 
-public class Staff implements Member {
+public class Staff implements Member, Comparable<Staff> {
     private double hoursWorked;
     private double salaryPaid;
     private String staffName;
@@ -69,5 +70,23 @@ public class Staff implements Member {
 
     public Date getDateOfRegistration() {
         return dateOfRegistration;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Staff staff = (Staff) o;
+        return Objects.equals(dateOfRegistration, staff.dateOfRegistration);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(dateOfRegistration);
+    }
+
+    @Override
+    public int compareTo(Staff student) {
+        return dateOfRegistration.compareTo(student.dateOfRegistration);
     }
 }
