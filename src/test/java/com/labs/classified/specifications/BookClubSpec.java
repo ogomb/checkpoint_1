@@ -3,11 +3,16 @@ package com.labs.classified.specifications;
 import com.labs.classified.implementation.Book;
 import com.labs.classified.implementation.BookClub;
 import static org.junit.Assert.*;
+
+import com.labs.classified.implementation.Member;
+import com.labs.classified.implementation.Student;
+import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.ArrayList;
 import java.util.ListIterator;
 
 
@@ -51,8 +56,9 @@ public class BookClubSpec {
     @Test
     public void whenBookIsBorrowedAndNoBooksInCollectionThrowError(){
         int numberOfBooksInCollection = bookClub.bookCollection.size();
+        String message = bookClub.borrowBook(book);
         if (numberOfBooksInCollection < 0)
-            exception.expect(RuntimeException.class);
+            assertThat(message, CoreMatchers.containsString("No books"));
     }
 
     @Test
@@ -61,6 +67,17 @@ public class BookClubSpec {
         bookClub.addBookToCollection(book);
         bookClub.removeBookFromCollection(book);
         assertEquals(bookClub.bookCollection.size(), 0);
+    }
+
+    @Test
+    public void whenBookIsBorrowedAndMemberListIsEmpty(){
+        Student student1 = new Student("Donald Trump",
+                "342434",34,"Civics");
+        Student student2 = new Student("Derrick Meyer",
+                "34134",54,"Physics");
+        bookClub.addBookToCollection(book);
+        String message = bookClub.borrowBook(book);
+        assertThat(message, CoreMatchers.containsString("not allowed"));
     }
 
 }
