@@ -1,19 +1,15 @@
 package com.labs.classified.specifications;
 
-import com.labs.classified.implementation.Book;
-import com.labs.classified.implementation.BookClub;
+import com.labs.classified.implementation.*;
+
 import static org.junit.Assert.*;
 
-import com.labs.classified.implementation.Member;
-import com.labs.classified.implementation.Student;
 import org.hamcrest.CoreMatchers;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import java.util.ArrayList;
-import java.util.ListIterator;
 
 
 public class BookClubSpec {
@@ -70,10 +66,27 @@ public class BookClubSpec {
     }
 
     @Test
-    public void whenBookIsBorrowedAndMemberListIsEmpty(){
+    public void whenBookIsBorrowedByStudentsThenFirstStudentGetsIt(){
+        Student student1 = new Student("Donald Trump",
+                "342434",34,"Civics");
+        Student student2 = new Student("Derrick Meyer",
+                "34134",54,"Physics");
         bookClub.addBookToCollection(book);
-        String message = bookClub.borrowBook(book);
-        assertThat(message, CoreMatchers.containsString("not allowed"));
-    }
+        String message = bookClub.borrowBook(book,student1,student2);
+        assertThat(message, CoreMatchers.containsString("Donald"));
+        }
 
+    @Test
+    public void whenBookIsBorrowedByStaffAndStudentThenStaffGetsIt(){
+        Student student = new Student("Donald Trump",
+                "342434",34,"Civics");
+        Staff staff = new Staff("Rick Meyers",
+                "32432",67,
+                234234.6,4.2);
+        bookClub.addBookToCollection(book);
+        String message = bookClub.borrowBook(book, student, staff);
+        assertThat(message, CoreMatchers.containsString("Rick Meyers"));
+    }
 }
+
+
