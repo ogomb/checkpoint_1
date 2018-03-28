@@ -52,9 +52,11 @@ public class BookClub {
                    if (bookToBorrow.equals(ISBNumber)) {
                        if (staffQueue.size() > 0){
                            removeBookFromCollection(book);
+                           staffQueue.get(0).setBookBorrowed(bookToBorrow);
                            return "Book issued to " + staffQueue.get(0).getName();
                        }else {
                            removeBookFromCollection(book);
+                           studentQueue.get(0).setBookBorrowed(bookToBorrow);
                            return "Book issued to " + studentQueue.get(0).getName();
                        }
                    }else {
