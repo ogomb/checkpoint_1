@@ -10,6 +10,7 @@ public class Staff implements Member, Comparable<Staff> {
     private int staffAge;
     private String staffAddress;
     public Date dateOfRegistration;
+    private String bookBorrowed;
 
     public Staff(String staffName, String staffAddress,
                  int staffAge, double salaryPaid,
@@ -36,6 +37,14 @@ public class Staff implements Member, Comparable<Staff> {
 
     public void setSalaryPaid(double salaryPaid) {
         this.salaryPaid = salaryPaid;
+    }
+
+    public String getBookBorrowed() {
+        return bookBorrowed;
+    }
+
+    public void setBookBorrowed(String bookBorrowed) {
+        this.bookBorrowed = bookBorrowed;
     }
 
     @Override

@@ -9,6 +9,7 @@ public class Student implements Member, Comparable<Student> {
     private String address;
     private String subjectInterest;
     public Date dateOfRegistration;
+    private String bookBorrowed;
 
     public Student(String name, String address,
                    int age, String subjectInterest){
@@ -61,6 +62,14 @@ public class Student implements Member, Comparable<Student> {
         return dateOfRegistration;
     }
 
+
+    public String getBookBorrowed() {
+        return bookBorrowed;
+    }
+
+    public void setBookBorrowed(String bookBorrowed) {
+        this.bookBorrowed = bookBorrowed;
+    }
 
     @Override
     public boolean equals(Object o) {
