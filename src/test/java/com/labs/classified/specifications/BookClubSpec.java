@@ -71,10 +71,6 @@ public class BookClubSpec {
 
     @Test
     public void whenBookIsBorrowedAndMemberListIsEmpty(){
-        Student student1 = new Student("Donald Trump",
-                "342434",34,"Civics");
-        Student student2 = new Student("Derrick Meyer",
-                "34134",54,"Physics");
         bookClub.addBookToCollection(book);
         String message = bookClub.borrowBook(book);
         assertThat(message, CoreMatchers.containsString("not allowed"));
