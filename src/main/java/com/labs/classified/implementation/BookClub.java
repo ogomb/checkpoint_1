@@ -75,4 +75,9 @@ public class BookClub {
         int locationOfBook = bookCollection.indexOf(bookToBorrow);
         bookCollection.remove(locationOfBook);
     }
+
+    public void returnBorrowedBook(String ISBNNumber, Member member){
+       bookCollection.add(ISBNNumber);
+       member.setBookBorrowed(null);
+    }
 }

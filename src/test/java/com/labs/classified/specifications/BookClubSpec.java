@@ -4,12 +4,12 @@ import com.labs.classified.implementation.*;
 
 import static org.junit.Assert.*;
 
-import org.hamcrest.CoreMatchers;
+
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
-
+import static org.hamcrest.CoreMatchers.*;
 
 
 public class BookClubSpec {
@@ -54,7 +54,7 @@ public class BookClubSpec {
         int numberOfBooksInCollection = bookClub.bookCollection.size();
         String message = bookClub.borrowBook(book);
         if (numberOfBooksInCollection < 0)
-            assertThat(message, CoreMatchers.containsString("No books"));
+            assertThat(message, containsString("No books"));
     }
 
     @Test
@@ -73,7 +73,7 @@ public class BookClubSpec {
                 "34134",54,"Physics");
         bookClub.addBookToCollection(book);
         String message = bookClub.borrowBook(book,student1,student2);
-        assertThat(message, CoreMatchers.containsString("Donald"));
+        assertThat(message, containsString("Donald"));
         }
 
     @Test
@@ -85,7 +85,16 @@ public class BookClubSpec {
                 234234.6,4.2);
         bookClub.addBookToCollection(book);
         String message = bookClub.borrowBook(book, student, staff);
-        assertThat(message, CoreMatchers.containsString("Rick Meyers"));
+        assertThat(message, containsString("Rick Meyers"));
+    }
+
+    @Test
+    public void whenBookIsReturnedThenCollectionShouldIncrease(){
+        String ISBNNumber = "343434";
+        Student student = new Student("Donald Trump",
+                "342434",34,"Civics");
+        bookClub.returnBorrowedBook(ISBNNumber, student );
+        assertThat(bookClub.bookCollection, hasItem(ISBNNumber));
     }
 }
 
