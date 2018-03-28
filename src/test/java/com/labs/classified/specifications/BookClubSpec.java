@@ -8,6 +8,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.ListIterator;
+
 
 public class BookClubSpec {
 
@@ -51,8 +53,14 @@ public class BookClubSpec {
         int numberOfBooksInCollection = bookClub.bookCollection.size();
         if (numberOfBooksInCollection < 0)
             exception.expect(RuntimeException.class);
+    }
 
-
+    @Test
+    public void whenBookIsBorrowedAndBooksIsAvailableReduceCollection(){
+        int numberOfBooksInCollection = bookClub.bookCollection.size();
+        bookClub.addBookToCollection(book);
+        bookClub.removeBookFromCollection(book);
+        assertEquals(bookClub.bookCollection.size(), 0);
     }
 
 }

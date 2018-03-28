@@ -3,6 +3,7 @@ package com.labs.classified.implementation;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.ListIterator;
 
 public class BookClub {
     public List<Student> studentMembers =new ArrayList<>();
@@ -34,6 +35,14 @@ public class BookClub {
         String ISBNumber = book.getISBNNumber();
         if (bookCollection.size() == 0){
             throw new RuntimeException("No books currently in store");
+        } else {
+            removeBookFromCollection(book);
         }
+    }
+
+    public void removeBookFromCollection(Book book){
+        String bookToBorrow = book.getISBNNumber();
+        int locationOfBook = bookCollection.indexOf(bookToBorrow);
+        bookCollection.remove(locationOfBook);
     }
 }
